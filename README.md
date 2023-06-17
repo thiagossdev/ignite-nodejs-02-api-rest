@@ -5,7 +5,7 @@ Project: Ignite Node.js API REST 2023
 ## RF
 
 - [x] O usuário deve poder criar uma nova transação;
-- [ ] O usuário deve obter um resumo da sua conta;
+- [x] O usuário deve obter um resumo da sua conta;
 - [x] O usuário deve poder listar todas as transações que já ocorreram;
 - [x] O usuário deve poder visualizar uma única transação;
 

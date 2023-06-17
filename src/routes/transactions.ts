@@ -43,4 +43,11 @@ export async function transactionsRoutes(app: FastifyInstance): Promise<void> {
       .first();
     return { transaction };
   });
+
+  app.get('/summary', async () => {
+    const summary = await knex(resource)
+      .sum('amount', { as: 'amount' })
+      .first();
+    return { summary };
+  });
 }
