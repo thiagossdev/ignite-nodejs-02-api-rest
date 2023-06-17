@@ -1,4 +1,6 @@
 import fastify from 'fastify';
+import cookie from '@fastify/cookie';
+
 import { knex } from './database';
 import { env } from './env';
 import { transactionsRoutes } from './routes/transactions';
@@ -14,7 +16,7 @@ app.get('/knex', async () => {
   return tables;
 });
 
-void app.register(transactionsRoutes, {
+void app.register(cookie).register(transactionsRoutes, {
   prefix: 'transactions',
 });
 

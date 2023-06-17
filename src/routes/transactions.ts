@@ -22,10 +22,21 @@ export async function transactionsRoutes(app: FastifyInstance): Promise<void> {
       request.body,
     );
 
+    let sessionId = request.cookies.sessionId ?? '';
+    if (sessionId === '') {
+      sessionId = randomUUID();
+
+      void response.cookie('sessionId', sessionId, {
+        path: '/',
+        maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
+      });
+    }
+
     await knex(resource).insert({
       id: randomUUID(),
       title,
       amount: type === 'credit' ? amount : -amount,
+      session_id: sessionId,
     });
 
     return await response.status(201).send();
