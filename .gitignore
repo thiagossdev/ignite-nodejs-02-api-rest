@@ -129,5 +129,11 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# Ignore all logfiles and tempfiles.
+/data/log/*
+/data/tmp/*
+!/data/log/.keep
+!/data/tmp/.keep
+
 # fake database file
 db.sqlite
