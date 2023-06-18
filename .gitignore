@@ -130,10 +130,12 @@ dist
 .pnp.*
 
 # Ignore all logfiles and tempfiles.
-/data/log/*
-/data/tmp/*
-!/data/log/.keep
-!/data/tmp/.keep
+data/log/*
+data/tmp/*
+!data/log/.keep
+!data/tmp/.keep
 
 # fake database file
 db.sqlite
+
+build
